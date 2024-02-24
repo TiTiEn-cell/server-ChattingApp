@@ -38,12 +38,42 @@ const register = asynHandle(async (req, res)=>{
     res.status(200).json({
         message:'Register new user successfully',
         data: {
-            ...newUser,
+            phoneNumber: newUser.phoneNumber,
+            id: newUser.id,
             accesstoken: await getJsonWebToken(phoneNumber, newUser.id),
+        }
+    })
+})
+
+const login = asynHandle(async (req, res) =>{
+    const {phoneNumber, password} = req.body;
+    const existingUser = await UserModel.findOne({phoneNumber})
+
+    if(!existingUser){
+        res.status(403);
+        throw new Error('User not found!!!');
+    }
+
+    const isMatchPassword = await bcrypt.compare(password, existingUser.password)
+
+    console.log(isMatchPassword)
+
+    if(!isMatchPassword){
+        res.status(401);
+        throw new Error('Phone number or Password is not correct')
+    }
+
+    res.status(200).json({
+        message:'login successfully',
+        data:{
+            id: existingUser.id,
+            phoneNumber: existingUser.phoneNumber,
+            accesstoken: await getJsonWebToken(phoneNumber, existingUser.id)
         }
     })
 })
 
 module.exports = {
     register,
+    login,
 }
