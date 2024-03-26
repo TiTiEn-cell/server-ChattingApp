@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "707187994627",
+    "project_id": "otp-auth-8b155",
+    "storage_bucket": "otp-auth-8b155.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707187994627:android:ebbb859a6f582c4ce51e36",
+        "android_client_info": {
+          "package_name": "com.ntantai123321.server"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzEODwzYGlnGgMtfsOsFhgBIBenQjyKAw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "plugins": ["@react-native-firebase/app", "@react-native-firebase/auth"],
+    "extra": {
+      "eas": {
+        "projectId": "b78f0035-90df-4381-8668-db3e252c8a79"
+      }
+    },
+    "android": {
+      "googleServicesFile": "./google-services.json",
+      "package": "com.ntantai123321.server"
+    }
+  }
+}
